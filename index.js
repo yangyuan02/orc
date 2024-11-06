@@ -1,4 +1,5 @@
 import { createWorker } from 'tesseract.js';
+import sharp from 'sharp';
 
 (async () => {
     // 设置语言模型,如果语音模型本地不存在,则会自动下载
@@ -8,7 +9,8 @@ import { createWorker } from 'tesseract.js';
         },
     });
     try {
-        const imgUrl = './ocr/sample1-2.png';
+        const imgUrl = './ocr/sample2.png';
+        // const imageData = await sharp(imgUrl).rotate().threshold(128).toBuffer()
         const ret = await worker.recognize(imgUrl, 'jpn');
         console.log(ret.data.text);
     } catch (error) {
