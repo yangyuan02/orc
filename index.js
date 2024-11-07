@@ -10,7 +10,7 @@ import { createWorker } from 'tesseract.js';
         },
     });
     try {
-        const imgUrl = './ocr/sample3.png';
+        const imgUrl = './ocr/sample7.png';
         // const imageData = await sharp(imgUrl).rotate().threshold(128).toBuffer()
         await worker.loadLanguage('jpn');  // 加载日语模型
         await worker.reinitialize('jpn');
